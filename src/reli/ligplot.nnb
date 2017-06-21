@@ -1,0 +1,21 @@
+ligplot.nnb output:
+
+   Atom 1               Atom 2        Distance
+WAT A  174   O       LIG A  147   C6     3.67
+WAT A  174   O       LIG A  147   C4     3.57
+WAT A  174   O       LIG A  147   C1     3.74
+LIG A  147   C4      PHE A  131   CE2    3.70
+LIG A  147   C4      PHE A  131   CZ     3.88
+LIG A  147   C6      ILE A  113   CD1    3.44
+LIG A  147   C4      LEU A  111   CD2    3.69
+LIG A  147   C5      LEU A  100   CD2    3.79
+LIG A  147   C3      LEU A  100   CD1    3.61
+LIG A  147   C6      ASP A   98   OD2    3.53
+LIG A  147   C5      ASP A   98   OD2    3.65
+LIG A  147   C5      ILE A   77   CD1    3.76
+LIG A  147   C3      LEU A   71   CD2    3.61
+LIG A  147   C1      LEU A   71   CD2    3.82
+LIG A  147   C3      LEU A   71   CD1    3.86
+LIG A  147   C1      LEU A   71   CD1    3.76
+LIG A  147   C4      ASN A   52   OD1    3.68
+LIG A  147   C2      ASN A   52   OD1    3.83
