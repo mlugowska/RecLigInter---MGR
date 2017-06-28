@@ -24,8 +24,7 @@ def get_ligand_number(PDB, LIG):
 
         return LIG_MIN, LIG_MAX, CHAIN_NAME
 
-#
-# LIG = 'LIG'
-# PDB = '5000.pdb'
-# lst = get_ligand_number(PDB, LIG)
-# print lst
+LIG = 'LIG'
+PDB = '/home/magdalena/Desktop/MGR_substrate_only/RecLigInter/pdb/SS_40560.pdb'
+lst = get_ligand_number(PDB, LIG)
+print lst

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 def nnb_list(filename, LIG):
-    listoflists = []
+
     with open(filename, 'r') as fileNNB:
 
         for line in fileNNB.readlines()[3:]:
@@ -19,7 +19,6 @@ def nnb_list(filename, LIG):
             yield '_'.join([atom1, atom2, 'NN'])
 
 
-#
 # file = 'ligplot.nnb'
 # print list(nnb_list(file, 'LIG'))
 

@@ -7,7 +7,7 @@ from reli.make_hhb import hhb_list
 from reli.make_nnb import nnb_list
 from reli.call import call
 import tempfile
-import shutil
+import shutil, os
 
 
 def make_interactions(PDB, LIG): # należy podać ścieżkę do .pdb i nazwę liganda
@@ -16,6 +16,7 @@ def make_interactions(PDB, LIG): # należy podać ścieżkę do .pdb i nazwę li
 
     tmp = tempfile.mkdtemp() # zwraca '/tmp/nazwa_katalogu np. '/tmp/tmpeBGxfs'
     shutil.copy2(PDB, tmp) # kopiowanie pliku pdb do katalogu tmp
+    tmp += os.path.sep
 
     # -------------------- polecenia hbadd, hbplus, hbplus -------------------------------------------------------------
 
@@ -30,7 +31,7 @@ def make_interactions(PDB, LIG): # należy podać ścieżkę do .pdb i nazwę li
 
     # -------------------- numer liganda (min i max) -------------------------------------------------------------------
 
-    add_chain(PDB)
+    # add_chain(PDB)
     LIG_MIN, LIG_MAX, CHAIN_NAME = get_ligand_number(PDB, LIG)
 
     # -------------------- polecenie ligplot ---------------------------------------------------------------------------
@@ -40,15 +41,19 @@ def make_interactions(PDB, LIG): # należy podać ścieżkę do .pdb i nazwę li
 
     # -------------------- lista oddziaływań ---------------------------------------------------------------------------
 
-    interactions_HH = list(hhb_list('ligplot.hhb'))
-    interactions_NN = list(nnb_list('ligplot.nnb', LIG))
+    interactions_HH = list(hhb_list(os.path.join(tmp, 'ligplot.hhb')))
+
+    interactions_NN = list(nnb_list(os.path.join(tmp, 'ligplot.nnb'), LIG))
 
     interactions = interactions_HH + interactions_NN
 
     # --------------------- usunięcie tmp ------------------------------------------------------------------------------
-    shutil.rmtree(tmp)
 
+    shutil.rmtree(tmp)
     return interactions
+
+f = '/home/magdalena/Desktop/MGR_substrate_only/RecLigInter/pdb/SS_40560.pdb'
+print make_interactions(f, 'LIG')
 
 
 

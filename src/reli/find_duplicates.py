@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from reli.run_multi_pdbs import multi_pdbs
-import shutil
 import os
+
 
 # iterate over dictionary to check if interactions duplicate
 def check_duplicates(PDB_source, LIG):
@@ -21,7 +21,6 @@ def check_duplicates(PDB_source, LIG):
     for key, values in interactions_in_time.iteritems():
         count_values = [values.count(x) for x in inter_set]
         print >> out, schema % tuple([key]+count_values)
-
 
     out.close()
 

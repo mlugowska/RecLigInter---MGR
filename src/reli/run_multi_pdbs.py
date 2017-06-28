@@ -3,6 +3,7 @@ from reli.make_interactions import make_interactions
 from reli.renaming_pdbs import rename_pdb_file
 import os
 
+
 def multi_pdbs(PDB_source, LIG): # ścieżka do plików pdb i nazwa liganda
 
     interactions_in_time = {}
@@ -23,10 +24,6 @@ def multi_pdbs(PDB_source, LIG): # ścieżka do plików pdb i nazwa liganda
                 # zwraca listę oddziaływań dla każdego pliku
 
 
-# iterować po słowniku: klucze i wartości
-# sprawdzić czy oddziaływania się powtarzają
-# ułożyć tabelkę
-#
 # f = '/home/magdalena/Desktop/MGR_substrate_only/RecLigInter/pdb'
 # ligand = 'LIG'
 # print multi_pdbs(f, ligand)
